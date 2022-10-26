@@ -1,0 +1,23 @@
+body {
+    color: #333;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td {
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    padding: 20px;
+    border: 1px solid #aaa;
+}
+
+.highlight {
+    background-color: #aaa;
+    box-shadow: 0 0 32px #aaa;
+}
