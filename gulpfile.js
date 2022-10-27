@@ -8,38 +8,38 @@ const { src, dest, series, watch } = require(`gulp`),
     reload = browserSync.reload;
 
     let compressHTML = () => {
-    return src(`dev/html/index.html`)
+    return src(`html/index.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
 };
 
 let compressCSS = () => {
-    return src(`dev/css/style.css`)
+    return src(`css/style.css`)
         .pipe(cssCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
 };
 
 let compressJS = () => {
-    return src(`dev/js/app.js`)
+    return src(`js/app.js`)
         .pipe(babel())
         .pipe(jsCompressor())
         .pipe(dest(`prod`));
 };
 
 let validateJS = () => {
-    return src(`dev/js/app.js`)
+    return src(`js/app.js`)
     .pipe(jsValidator())
     .pipe(jsValidator.formatEach(`compact`, process.stderr));
 };
 
 let transpileJSForDev = () => {
-    return src(`dev/js/app.js`)
+    return src(`js/app.js`)
         .pipe(babel())
         .pipe(dest(`temp/scripts`));
 };
 
 let transpileJSForProd = () => {
-    return src(`dev/js/app.js`)
+    return src(`js/app.js`)
         .pipe(babel())
         .pipe(jsCompressor())
         .pipe(dest(`prod/scripts`));
@@ -51,15 +51,14 @@ let serve = () => {
         reloadDelay: 50,
         server: {
             baseDir: [
-                `dev`,
-                `dev/html`
+                `index.html`
             ]
         }
     });
 
-    watch(`dev/html/*.html`).on(`change`, reload);
-    watch(`dev/css/*.css`).on(`change`, reload);
-    watch(`dev/js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload);
+    watch(`index.html`).on(`change`, reload);
+    watch(`css/*.css`).on(`change`, reload);
+    watch(`js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload);
 
 };
 
