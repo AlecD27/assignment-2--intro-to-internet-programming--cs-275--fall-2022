@@ -1,7 +1,7 @@
 window.onload = () => {
-    let main = document.querySelector(`main`);
-    main.addEventListener(`click`, () => {
-        main.style.width = `500px`;
-        main.style.height = `500px`;
+    let rightButton = document.querySelector(`.button-R`);
+    let container = document.querySelector(`.big-container`);
+    rightButton.addEventListener(`click`, () => {
+        container.style.right = parseInt(container.style.right) - 465 + 'px';
     });
 };
