@@ -1,6 +1,11 @@
 body {
-    color: #333;
-    margin: 0 auto;
+  color: #333;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 header {
@@ -11,10 +16,10 @@ header {
 }
 
 .big-container {
-  position: absolute;
   display: flex;
-  justify-content: flex-end;
-  right: 420px;
+  justify-content: flex-start;
+  margin: 450px;
+  margin-top: 0px;
 }
 
 .container {
@@ -35,22 +40,22 @@ header {
   width: 200px;
 }
 
-.button-L {
+#button-L {
   position: absolute;
-  left: 420px;
-  top: 260px;
+  left: 430px;
+  top: 250px;
   width: 25px;
-  z-index: 1;
+  z-index: 2;
   background: rgb(233, 233, 233);
   padding: 10px;
 }
 
-.button-R {
+#button-R {
   position: absolute;
-  right: 420px;
-  top: 260px;
+  right: 430px;
+  top: 250px;
   width: 25px;
-  z-index: 1;
+  z-index: 2;
   background: rgb(233, 233, 233);
   padding: 10px;
 }
@@ -58,17 +63,25 @@ header {
 .box-L {
   position: absolute;
   left: 0px;
-  width: 420px;
+  width: 450px;
   height: 500px;
-  z-index: 2;
+  z-index: 1;
   background: white;
 }
 
 .box-R {
   position: absolute;
   right: 0px;
-  width: 420px;
+  width: 450px;
   height: 400px;
-  z-index: 2;
+  z-index: 1;
   background: white;
+}
+
+.move {
+  transition: all .5s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
