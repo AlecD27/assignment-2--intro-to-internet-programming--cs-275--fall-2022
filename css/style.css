@@ -11,7 +11,7 @@ body {
 header {
   text-align: center;
   font-family: sans-serif;
-  font-weight: bold;
+  font-weight: 100;
   padding: 25px;
 }
 
@@ -19,7 +19,7 @@ header {
   display: flex;
   justify-content: flex-start;
   margin: 450px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .container {
@@ -62,7 +62,7 @@ header {
 
 .box-L {
   position: absolute;
-  left: 0px;
+  left: 0;
   width: 450px;
   height: 500px;
   z-index: 1;
@@ -71,7 +71,7 @@ header {
 
 .box-R {
   position: absolute;
-  right: 0px;
+  right: 0;
   width: 450px;
   height: 400px;
   z-index: 1;
