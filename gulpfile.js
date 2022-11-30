@@ -85,7 +85,8 @@ let serve = () => {
             baseDir: [
                 `temp`,
                 `prod`,
-                `html`
+                `html`,
+                `.`
             ]
         }
     });
